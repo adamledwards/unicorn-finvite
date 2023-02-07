@@ -6,7 +6,7 @@
     "dev": "remix dev",
     "start": "remix-serve build",
     "typecheck": "tsc",
-    "fomat": "dprint fmt"
+    "format": "dprint fmt"
   },
   "dependencies": {
     "@prisma/client": "^4.9.0",

@@ -4,10 +4,10 @@ import { useState } from "react";
 import Invite from "~/components/Invite";
 import { db } from "~/utils/db.server";
 
+import FeedbackForm from "~/components/FeedbackForm";
 import appStyles from "~/styles/App.css";
 import globalStyles from "~/styles/index.css";
 import { getInvite, updateRSVPInvite } from "~/utils/api/guest.server";
-import FeedbackForm from "~/components/FeedbackForm";
 
 export const links: LinksFunction = () => {
   return [
@@ -50,11 +50,13 @@ export default function Index() {
       rsvp={rsvp}
       guest={guest}
     >
-      <FeedbackForm rsvp={rsvp}
+      <FeedbackForm
+        rsvp={rsvp}
         onRsvpChange={(newRsvp) => {
           setRsvp(newRsvp);
         }}
-        guest={guest} />
+        guest={guest}
+      />
     </Invite>
   );
 }

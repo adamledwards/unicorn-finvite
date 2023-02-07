@@ -9,7 +9,7 @@ export async function getClient(): Promise<BaseClient> {
     _client = new issuer.Client({
       client_id: process.env.CLIENT_ID,
       client_secret: process.env.SECRET,
-      redirect_uris: ["http://localhost:3000/auth/callback"],
+      redirect_uris: [`http://${process.env.BASE_URL}/auth/callback`],
     });
   }
   return _client;

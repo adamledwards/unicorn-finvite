@@ -1,7 +1,6 @@
 import { Guest } from "@prisma/client";
 import { Form } from "@remix-run/react";
 
-
 type InviteProps = {
   rsvp: boolean | null;
   name?: string;
@@ -61,6 +60,5 @@ export default function FeedbackForm({ rsvp, onRsvpChange, guest }: InviteProps)
       <br />
       Contact Sophie on <a href="https://wa.me/447939950966">07939950966</a>
     </div>
-
   );
 }

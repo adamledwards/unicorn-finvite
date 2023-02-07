@@ -7,7 +7,7 @@ import Unicorn from "~/svg/unicorn";
 type InviteProps = {
   rsvp: boolean | null;
   guest?: Guest;
-  children?: React.ReactNode
+  children?: React.ReactNode;
 };
 export default function Invite({ rsvp, guest, children }: InviteProps) {
   return (

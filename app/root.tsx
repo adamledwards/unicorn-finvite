@@ -1,4 +1,4 @@
-import type { MetaFunction, LinksFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from "@remix-run/node";
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 
 export const meta: MetaFunction = () => ({
@@ -14,7 +14,6 @@ export const links: LinksFunction = () => {
     { rel: "icon", href: "favicon.png", type: "image/png" },
   ];
 };
-
 
 export default function App() {
   return (
