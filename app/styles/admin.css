@@ -1,0 +1,112 @@
+html,
+body,
+#root {
+    min-height: 100%;
+}
+
+html {
+    display: flex;
+    font-family: 'Baloo 2', cursive, Helvetica, Arial, sans-serif;
+}
+
+body {
+    flex: 1;
+    font-size: 1.4em;
+}
+
+body {
+    background: linear-gradient(0deg, #CDF1F1 10%, #DF96D1);
+    padding: 20px;
+}
+
+main {
+    min-height: 100%;
+}
+
+
+.guest {
+    display: flex;
+    flex-direction: column;
+}
+
+.guest-list ul {
+    margin: 0;
+    padding: 0;
+}
+
+.guest-list li {
+    display: flex;
+    flex-direction: column;
+    background-color: #CDF1F1;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.guest-list-name {
+    flex: 1;
+
+}
+
+.guest-form {
+    flex: 1;
+}
+
+.guest-list-details,
+.guest-list-action {
+    display: flex;
+    flex-direction: row;
+}
+
+.guest-list-action {
+    gap: 20px;
+}
+
+button {
+    background-color: #FFFFFF;
+    border: 0;
+    border-radius: .5rem;
+    box-sizing: border-box;
+    color: #111827;
+    font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: .875rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    padding: .75rem 1rem;
+    text-align: center;
+    text-decoration: none #D1D5DB solid;
+    text-decoration-thickness: auto;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+}
+
+button:hover {
+    background-color: rgb(249, 250, 251);
+}
+
+button:focus {
+    outline: 2px solid transparent;
+    outline-offset: 2px;
+}
+
+button:focus-visible {
+    box-shadow: none;
+}
+
+button.danger {
+    background-color: #c53030;
+    color: #FFFFFF;
+}
+
+button.danger:hover {
+    background-color: #e53e3e;
+}
+
+.error-box {
+    border: 2px solid #c53030;
+    color: #c53030;
+    background-color: #FFFFFF;
+    padding: 10px;
+}

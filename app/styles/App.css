@@ -1,0 +1,180 @@
+@font-face {
+  font-family: 'Deadhead Script';
+  src: url('DeadheadScript.woff2') format('woff2'),
+    url('DeadheadScript.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  display: flex;
+}
+
+.App {
+  background: linear-gradient(0deg, #CDF1F1 10%, #DF96D1);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+header {
+  text-align: center;
+}
+
+.App>section {
+  flex: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    flex-direction: row;
+  }
+
+  .App>section {
+    flex: 1;
+    flex-direction: column;
+    display: flex;
+  }
+}
+
+.small {
+  font-size: 2.25rem;
+  font-family: 'Deadhead Script';
+}
+
+.text-path {
+  font-size: 1.5rem;
+}
+
+.name {
+  display: flex;
+  font-family: 'Deadhead Script';
+  line-height: 1;
+  align-items: baseline;
+}
+
+.name__at {
+  text-align: center;
+  font-size: 2.25rem;
+}
+
+.name__name {
+  font-size: 72px;
+}
+
+.text__birthday {
+  font-family: 'Baloo 2', cursive;
+  text-transform: uppercase;
+  font-size: 1.625rem;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+
+}
+
+.detail {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 768px) {
+  .detail {
+    flex: 1;
+    align-items: flex-end;
+    font-size: 1.625rem;
+    line-height: 1;
+  }
+}
+
+.detail>div {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 14px 0;
+}
+
+.detail>div:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -1px;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background-color: #414141;
+}
+
+.detail .large {
+  font-size: 1.6em;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stage {
+  width: 95%;
+  margin: 0 auto;
+  position: relative;
+  padding-bottom: 20%;
+
+}
+
+.unicorn {
+  position: absolute;
+  width: 35%;
+  top: 35px;
+  margin-left: -50%;
+  transform: translateX(-50%);
+}
+
+.RSVP {
+
+
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  padding: 50px 20px 100px 20px;
+  padding-bottom: 100px;
+  padding-top: 50px;
+
+  line-height: 1.5;
+  font-size: 1.2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .RSVP {
+    font-size: 1.6rem;
+  }
+}
+
+.cloudBunch {
+  top: 0;
+  left: 0;
+  position: absolute;
+}
+
+.RSVP__content {
+  position: relative;
+  padding: 20px;
+  z-index: 1;
+  border: 1px solid currentColor;
+}
+
+.RSVP__content>form>* {
+  margin: 10px 0;
+}
+
+.RSVP__content input {
+  margin-right: 10px;
+}
