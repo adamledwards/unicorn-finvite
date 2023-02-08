@@ -43,7 +43,7 @@ export const action = async ({ request }: ActionArgs) => {
       `Lia Invite 🤖: Good news! ${guest.name} will be attending. 🎉`,
       `<p>Just to let you know ${guest.name} will be coming to Lia's birthday</p><p>Kind Regards<br>Robot 🤖</p>`,
     ] : [
-      `Lia Invite 🤖: Sad new ${guest.name} wont be attending. 😞`,
+      `Lia Invite 🤖: Sad news ${guest.name} will not be attending. 😞`,
       `<p>Just to let you know ${guest.name} will not be coming to Lia's birthday</p><p>Kind Regards<br>Robot 🤖</p>`,
     ]
     try {
