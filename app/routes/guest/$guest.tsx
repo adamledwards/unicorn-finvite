@@ -35,9 +35,9 @@ export const action = async ({ request }: ActionArgs) => {
   const data = await request.formData();
   const id = data.get("id") as string;
   const rsvp = data.get("rsvp") as string;
-
+  let guest
   if (request.method === "PUT") {
-    const guest = await updateRSVPInvite(id, rsvp === "yes");
+    guest = await updateRSVPInvite(id, rsvp === "yes");
 
     const [subject, content] = rsvp === "yes" ? [
       `Lia Invite 🤖: Good news! ${guest.name} will be attending. 🎉`,
@@ -55,6 +55,7 @@ export const action = async ({ request }: ActionArgs) => {
   }
   return json({
     success: true,
+    guest
   });
 };
 
@@ -103,7 +104,7 @@ export default function Index() {
           guest={guest}
         />
 
-        {(data?.success && guest.attending) && <Confetti />}
+        {(data?.success && data?.guest?.attending) && <Confetti />}
       </Invite>
     </>
   );
