@@ -11,18 +11,15 @@ html {
 
 body {
     flex: 1;
-    font-size: 1.4em;
-}
-
-body {
+    font-size: 16px;
     background: linear-gradient(0deg, #CDF1F1 10%, #DF96D1);
     padding: 20px;
 }
 
 main {
     min-height: 100%;
+    font-size: 1.4em;
 }
-
 
 .guest {
     display: flex;

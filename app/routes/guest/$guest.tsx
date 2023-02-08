@@ -1,8 +1,9 @@
-import { ActionArgs, json, LinksFunction, LoaderArgs, redirect } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import { useState } from "react";
+import { ActionArgs, json, LinksFunction, LoaderArgs } from "@remix-run/node";
+import { useActionData, useLoaderData } from "@remix-run/react";
+import confetti from "canvas-confetti";
+
+import { useEffect, useRef, useState } from "react";
 import Invite from "~/components/Invite";
-import { db } from "~/utils/db.server";
 
 import FeedbackForm from "~/components/FeedbackForm";
 import appStyles from "~/styles/App.css";
@@ -11,7 +12,6 @@ import { getInvite, updateRSVPInvite } from "~/utils/api/guest.server";
 
 export const links: LinksFunction = () => {
   return [
-    { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" },
     { rel: "stylesheet", href: globalStyles },
     { rel: "stylesheet", href: appStyles },
   ];
@@ -35,28 +35,59 @@ export const action = async ({ request }: ActionArgs) => {
   const rsvp = data.get("rsvp") as string;
 
   if (request.method === "PUT") {
-    await updateRSVPInvite(parseInt(id), rsvp === "yes");
+    await updateRSVPInvite(id, rsvp === "yes");
   }
   return json({
     success: true,
   });
 };
 
+function Confetti() {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [finished, setDone] = useState(false);
+  useEffect(() => {
+    const runConfetti = async () => {
+      const canvas = canvasRef.current;
+      if (canvas) {
+        const myConfetti = confetti.create(canvas, {
+          resize: true,
+          useWorker: true,
+        });
+        await myConfetti({
+          particleCount: 100,
+          spread: 160,
+        });
+
+        setDone(true);
+      }
+    };
+
+    runConfetti();
+  }, []);
+  return finished ? null : <canvas ref={canvasRef} style={{ inset: 0, position: "absolute", width: "100%" }} />;
+}
 export default function Index() {
   const { guest } = useLoaderData<typeof loader>();
+  const data = useActionData<typeof action>();
+
   const [rsvp, setRsvp] = useState<boolean | null>(guest.attending);
+
   return (
-    <Invite
-      rsvp={rsvp}
-      guest={guest}
-    >
-      <FeedbackForm
+    <>
+      <Invite
         rsvp={rsvp}
-        onRsvpChange={(newRsvp) => {
-          setRsvp(newRsvp);
-        }}
         guest={guest}
-      />
-    </Invite>
+      >
+        <FeedbackForm
+          rsvp={rsvp}
+          onRsvpChange={(newRsvp) => {
+            setRsvp(newRsvp);
+          }}
+          guest={guest}
+        />
+
+        {data?.success && <Confetti />}
+      </Invite>
+    </>
   );
 }

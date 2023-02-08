@@ -29,7 +29,7 @@ export function createInvite(name: string) {
   });
 }
 
-export function deleteInvite(id: number) {
+export function deleteInvite(id: string) {
   return db.guest.delete({
     where: {
       id,
@@ -37,7 +37,7 @@ export function deleteInvite(id: number) {
   });
 }
 
-export function updateRSVPInvite(id: number, attending: boolean) {
+export function updateRSVPInvite(id: string, attending: boolean) {
   return db.guest.update({
     data: {
       attending,

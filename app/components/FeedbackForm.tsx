@@ -30,7 +30,7 @@ export default function FeedbackForm({ rsvp, onRsvpChange, guest }: InviteProps)
                     }
                   }}
                 />
-                <label htmlFor="rsvpYes">Yes, I can attend</label>
+                <label htmlFor="rsvpYes">Yes, I can attend 🎉</label>
               </div>
               <div>
                 <input
@@ -46,7 +46,7 @@ export default function FeedbackForm({ rsvp, onRsvpChange, guest }: InviteProps)
                   name="rsvp"
                   value="no"
                 />
-                <label htmlFor="rsvpNo">No, I cannot attend</label>
+                <label htmlFor="rsvpNo">No, I cannot attend 😞</label>
               </div>
               <input type="hidden" name="id" value={guest.id} />
               <button type="submit">Submit</button>

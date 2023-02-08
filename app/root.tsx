@@ -5,13 +5,14 @@ export const meta: MetaFunction = () => ({
   charset: "utf-8",
   title: "Lia's 5th Birthday",
   viewport: "width=device-width,initial-scale=1",
-  robots: "noindex",
+  robots: "noindex nofollow",
 });
 
 export const links: LinksFunction = () => {
   return [
-    { rel: "icon", href: "favicon.svg", type: "image/svg+xml" },
-    { rel: "icon", href: "favicon.png", type: "image/png" },
+    { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&display=swap" },
+    { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+    { rel: "icon", href: "/favicon.png", type: "image/png" },
   ];
 };
 

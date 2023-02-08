@@ -57,7 +57,7 @@ export async function action({ request }: ActionArgs) {
       if (!id) {
         throw new Error("MISSING_VALUE");
       }
-      await deleteInvite(parseInt(id));
+      await deleteInvite(id);
     } catch (e) {
       error = {
         message: "unknown",
@@ -105,7 +105,7 @@ export default function Admin() {
           <div className="guest-list">
             <ul>
               {guests.map(({ name, attending, id, slug }) => (
-                <li key={id.toString()}>
+                <li key={id}>
                   <div className="guest-list-details">
                     <div className="guest-list-name">
                       {name}
@@ -119,7 +119,7 @@ export default function Admin() {
                       onClick={() => {
                         navigator.share({
                           title: "Lia's 5th Birthday",
-                          text: `We hope ${name} can mke it`,
+                          text: `We hope ${name} can make it`,
                           url: `${window.location.origin}/guest/${slug}/`,
                         });
                       }}

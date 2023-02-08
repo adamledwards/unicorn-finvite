@@ -2,10 +2,11 @@ node_modules
 # Keep environment variables out of version control
 .env
 .cache
-/build/*
+
 
 *.db
 
-/public
 
+/build
+/public/build
 .DS_Store
