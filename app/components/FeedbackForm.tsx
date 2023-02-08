@@ -54,9 +54,9 @@ export default function FeedbackForm({ rsvp, onRsvpChange, guest }: InviteProps)
           </>
         )}
       {guest.attending
-        && <>We're look forward to seeing you soon.</>}
+        && <>We look forward to seeing you soon.</>}
       {guest.attending === false
-        && <>That's a shame let us know if you change your mind.</>}
+        && <>That's a shame, you will be missed!</>}
       <br />
       Contact Sophie on <a href="https://wa.me/447939950966">07939950966</a>
     </div>
