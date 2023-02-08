@@ -21,6 +21,10 @@ main {
     font-size: 1.4em;
 }
 
+input {
+    font-size: 1.4em;
+}
+
 .guest {
     display: flex;
     flex-direction: column;
