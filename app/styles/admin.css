@@ -111,3 +111,11 @@ button.danger:hover {
     background-color: #FFFFFF;
     padding: 10px;
 }
+
+.guest__name {
+    display: block;
+}
+
+.guest__input {
+    width: 100%;
+}

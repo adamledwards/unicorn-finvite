@@ -97,8 +97,8 @@ export default function Admin() {
         <div className="guest">
           <Form method="post" className="guest-form">
             <div>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" />
+              <label className="guest__name" htmlFor="name">Name</label>
+              <input className="guest__input" type="text" id="name" name="name" />
             </div>
             <button type="submit">Add</button>
           </Form>
