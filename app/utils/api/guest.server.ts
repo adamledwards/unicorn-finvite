@@ -39,6 +39,10 @@ export function deleteInvite(id: string) {
 
 export function updateRSVPInvite(id: string, attending: boolean) {
   return db.guest.update({
+    select: {
+      attending: true,
+      name: true
+    },
     data: {
       attending,
     },

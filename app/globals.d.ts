@@ -9,6 +9,7 @@ declare global {
       CLIENT_ID: string;
       SECRET: string;
       BASE_URL: string;
+      EMAIL_KEY: string
     }
   }
 }

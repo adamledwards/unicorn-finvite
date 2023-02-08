@@ -1,6 +1,6 @@
 import { Prisma } from "@prisma/client";
-import { ActionArgs, json, LinksFunction, LoaderArgs, redirect, Response } from "@remix-run/node";
-import { Form, Outlet, useActionData, useLoaderData } from "@remix-run/react";
+import { ActionArgs, json, LinksFunction, LoaderArgs, redirect } from "@remix-run/node";
+import { Form, useActionData, useLoaderData } from "@remix-run/react";
 import stylesUrl from "~/styles/admin.css";
 import { createInvite, deleteInvite, getInvites } from "~/utils/api/guest.server";
 import { requiresAuth } from "~/utils/auth.server";

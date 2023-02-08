@@ -11,8 +11,15 @@ datasource db {
 }
 
 model Guest {
-  id        String      @id @default(uuid())
+  id        String   @id @default(uuid())
   name      String   @unique
   slug      String   @unique
   attending Boolean?
+}
+
+model Email {
+  id       String  @id @default(uuid())
+  name     String  @unique
+  email    String  @unique
+  isSender Boolean
 }
