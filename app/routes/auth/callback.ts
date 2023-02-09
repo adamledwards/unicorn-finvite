@@ -1,5 +1,4 @@
-import { json, LoaderArgs, redirect } from "@remix-run/node";
-import { generators, TokenSet } from "openid-client";
+import { LoaderArgs, redirect } from "@remix-run/node";
 import { encodeToken, getClient } from "~/utils/auth.server";
 import { commitSession, getSession } from "~/utils/session.server";
 
